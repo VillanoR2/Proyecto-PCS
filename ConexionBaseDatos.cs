@@ -20,12 +20,12 @@ namespace AccesoDatos
             conexionServicioSocialBD = new SqlConnection(connectionString);
         }
 
-        public SqlConnection GetConnection()
+        public SqlConnection GetConexion()
         {
             return conexionServicioSocialBD;
         }
 
-        public void CloseConnection()
+        public void CloseConexion()
         {
             if (conexionServicioSocialBD != null)
             {
