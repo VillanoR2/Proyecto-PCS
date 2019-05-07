@@ -8,17 +8,17 @@ namespace LogicaDeNegocio
 {
      public class Alumno : Persona
     {
-      private String ContraseñaAlumno { get; set; }
-      private String Matricula { get; set; }
-      private int NumHoras { get; set; }
-      private Carrera CarreraAlumno { get; set; }
+      public String ContraseñaAlumno { get; set; }
+      public String Matricula { get; set; }
+      public int NumHoras { get; set; }
+      public Carrera CarreraAlumno { get; set; }
       
     }
 
-    enum Carrera
+    public enum Carrera
     {
-        IngenieriaSoftware = 1,
-        TecnologiasComputacionales = 2,
-        RedesServiciosComputacionales = 3
+        IngenieriaSoftware = 0,
+        TecnologiasComputacionales = 1,
+        RedesServiciosComputacionales = 2
     }
 }
