@@ -8,21 +8,32 @@ namespace LogicaDeNegocio
 {
     public class Expediente
     {
-        private Documento DocumentoExpediente { get; set; }
-        private Reporte ReporteExpediente { get; set; }
+        public Documento DocumentoExpediente { get; set; }
+        public Reporte ReporteExpediente { get; set; }
     }
 
-    class Documento
+    public class Documento
     {
-        private String NombreDocumento { get; set; }
-        private int IdDocumento { get; set; }
-        private String DescripcionDocumento { get; set; }
+        public String NombreDocumento { get; set; }
+        public int IdDocumento { get; set; }
+        public String DescripcionDocumento { get; set; }
+        public String FechaEntrega { get; set; }
+    }
+    
+     public enum IdDocumento
+    {
+        CartaAsignacion = 1,
+        CartaAceptacion = 2,
+        FormatoRegistroYPlanActividades = 3,
+        CartaLiberacion = 4,
+        ReporteFinal = 5 
+
     }
 
-    class Reporte
+    public class Reporte
     {
-        private String Fecha { get; set; }
-        private int HorasRegistradas { get; set; }
-        private int IdReporte { get; set; }
+        public String Fecha { get; set; }
+        public int HorasRegistradas { get; set; }
+        public int IdReporte { get; set; }
     }
 }
