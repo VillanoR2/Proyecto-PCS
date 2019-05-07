@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,8 @@ namespace LogicaDeNegocio
 {
     public class Encargado : Persona
     {
-        private Institucion Pertenecea { get; set; }
-        private Proyecto Dirigea { get; set; }
+        public String IdEncargado { get; set; }
+        public String Pertenecea { get; set; }
+        public String Dirigea { get; set; }
     }
 }
