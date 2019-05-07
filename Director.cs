@@ -8,8 +8,8 @@ namespace LogicaDeNegocio
 {
     public class Director : Persona
     {
-        private String Contraseña { get; set; }
-        private int NumPersonal { get; set; }
+        public String Contraseña { get; set; }
+        public int NumPersonal { get; set; }
    
     }
 }
