@@ -11,8 +11,10 @@ namespace UnitTest
         [TestMethod]
         public void PruebaRegistrarAlumno()
         {
-            Alumno alumno = new Alumno(); 
+           Alumno alumno = new Alumno(); 
             AlumnoDAO metodo = new AlumnoDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
 
             alumno.Matricula = "S17012946";
             alumno.Nombre = "Arturo";
@@ -22,7 +24,9 @@ namespace UnitTest
             alumno.ContraseñaAlumno = "Trigoverde2";
             alumno.FechaNacimiento = "1999-06-19";
         
-            metodo.registrarAlumno(alumno);
+            resultadoObtenido=metodo.registrarAlumno(alumno);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar estudiante válido");
 
         }
     }
