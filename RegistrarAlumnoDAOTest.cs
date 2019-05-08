@@ -106,10 +106,32 @@ namespace UnitTest
             coordinador.ContraseñaCoordinador = "angel123";
             coordinador.FechaNacimiento = "1989-07-18";
             coordinador.Carrera = 0;
+            coordinador.NumPersonal = "A01";
         
             resultadoObtenido=metodo.registrarCoordinador(coordinador);
 
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar coordinador válido");
+
+        }
+        
+        public void PruebaRegistrarCoordinador()
+        {
+           Coordinador coordinador = new Coordinador(); 
+            DirectorDAO metodo = new DirectorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+            coordinador.Nombre = "Ángel Juán";
+            coordinador.Apellido = "Sánchez García";
+            coordinador.CorreoElectronico = "angel@gmail.com";
+            coordinador.ContraseñaCoordinador = "angel123";
+            coordinador.FechaNacimiento = "1989-07-18";
+            coordinador.Carrera = 1;
+            coordinador.NumPersonal = "A01";
+        
+            resultadoObtenido=metodo.registrarCoordinador(coordinador);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria repetida");
 
         }
     }
