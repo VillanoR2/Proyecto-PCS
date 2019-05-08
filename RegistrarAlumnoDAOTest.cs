@@ -71,5 +71,26 @@ namespace UnitTest
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria repetida");
 
         }
+        
+          public void PruebaRegistrarAlumnoLlavePrimaria()
+        {
+           Alumno alumno = new Alumno(); 
+            AlumnoDAO metodo = new AlumnoDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+
+            alumno.Matricula = "";
+            alumno.Nombre = "Ana";
+            alumno.Apellido = "Hernandez";
+            alumno.CorreoElectronico = "zs17012930@estudiantes.uv.mx";
+            alumno.CarreraAlumno = 0;
+            alumno.ContraseñaAlumno = "ana123";
+            alumno.FechaNacimiento = "1998-09-09";
+        
+            resultadoObtenido=metodo.registrarAlumno(alumno);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria vacía");
+
+        }
     }
 }
