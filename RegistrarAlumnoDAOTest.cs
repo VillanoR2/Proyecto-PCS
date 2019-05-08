@@ -169,7 +169,7 @@ namespace UnitTest
             coordinador.ContraseñaCoordinador = "angel123";
             coordinador.FechaNacimiento = "1989-07-18";
             coordinador.Carrera = 1;
-            coordinador.NumPersonal = " ";
+            coordinador.NumPersonal = null;
         
             resultadoObtenido=metodo.registrarCoordinador(coordinador);
 
@@ -222,7 +222,7 @@ namespace UnitTest
             bool resultadoEsperado = true;
             bool resultadoObtenido = false;
             
-           institucion.IdInstitucion = "";
+           institucion.IdInstitucion = null;
            institucion.NombreInstitucion = "Gobierno Municipal";
            institucion.Direccion = "Enriquez col. Centro";
            institucion.TelefonoInstitucion = "2288922180";
