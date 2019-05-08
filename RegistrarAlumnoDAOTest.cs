@@ -156,6 +156,25 @@ namespace UnitTest
 
         }
         
+        public void PruebaRegistrarInstitución()
+        {
+            Institución institución = new Institución(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+            coordinador.Nombre = "Ángel Juán";
+            coordinador.Apellido = "Sánchez García";
+            coordinador.CorreoElectronico = "angel@gmail.com";
+            coordinador.ContraseñaCoordinador = "angel123";
+            coordinador.FechaNacimiento = "1989-07-18";
+            coordinador.Carrera = 1;
+            coordinador.NumPersonal = " ";
         
+            resultadoObtenido=metodo.registrarCoordinador(coordinador);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria vacía");
+
+        }
     }
 }
