@@ -347,8 +347,25 @@ namespace UnitTest
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba registrar un proyecto con campos vacios";
 
         }
+        public void PruebaRegistrarEncargadoLlaveRepetida()
+        {
+           Encargado encargado = new Encargado(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;    
+            encargado.Nombre    = "Juan Carlos";  
+            encargado.Apellido = "Perez"
+            encargado.CorreoElectronico = "juanc@gmail.com"
+            encargado.FechaNacimiento = "1981-01-09";
+            encargado.Dirigea = 02;
+            encargado.Pertenecea = 001;
+            resultadoObtenido=metodo.registrarEncargado(encargado);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar encargado con llave repetida");
+
+        }
                             
-        public void PruebaRegistrarEncargado()
+        public void PruebaRegistrarEncargadoCamposVacios()
         {
            Encargado encargado = new Encargado(); 
             Coordinador metodo = new CoordinadorDAO();
@@ -366,6 +383,44 @@ namespace UnitTest
 
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar encargado campos vacíos");
 
-        }         
+        }
+        public void PruebaRegistrarEncargadoInstitucionInvalido()
+        {
+           Encargado encargado = new Encargado(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;  
+            encargado.Nombre = "Javier"
+            encargado.Apellido = "Limón"
+            encargado.CorreoElectronico = "javier@gmail.com"
+            encargado.FechaNacimiento = "1980-07-09";
+            encargado.Dirigea = 01;
+            encargado.Pertenecea = 0009;   
+            resultadoObtenido=metodo.registrarEncargado(encargado);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar encargado con institución no válida");
+
+        }
+        
+         public void PruebaRegistrarEncargadoProyectoInvalido()
+        {
+           Encargado encargado = new Encargado(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false; 
+            encargado.Nombre    = "Javier"  
+            encargado.Apellido = "Limón"
+            encargado.CorreoElectronico = "javier@gmail.com"
+            encargado.FechaNacimiento = 1980-07-09
+            encargado.Dirigea = 00089;
+            encargado.Pertenecea = 001; 
+            resultadoObtenido=metodo.registrarEncargado(encargado);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar encargado con proyecto no válido");
+
+        }
+       
+        
+        
     }
 }
