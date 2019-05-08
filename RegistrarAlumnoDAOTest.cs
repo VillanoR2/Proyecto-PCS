@@ -163,17 +163,15 @@ namespace UnitTest
             bool resultadoEsperado = true;
             bool resultadoObtenido = false;
             
-            coordinador.Nombre = "Ángel Juán";
-            coordinador.Apellido = "Sánchez García";
-            coordinador.CorreoElectronico = "angel@gmail.com";
-            coordinador.ContraseñaCoordinador = "angel123";
-            coordinador.FechaNacimiento = "1989-07-18";
-            coordinador.Carrera = 1;
-            coordinador.NumPersonal = " ";
+           institucion.IdInstitucion = "001";
+           institucion.NombreInstitucion = "FEI";
+           institucion.Direccion = "avenida Xalapa esq. Avila camacho";
+           institucion.TelefonoInstitucion = "2288900000";
+           institucion.TipoInstitucion = "Universidad;
         
-            resultadoObtenido=metodo.registrarCoordinador(coordinador);
+            resultadoObtenido=metodo.registrarInstitución(institución);
 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria vacía");
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar institución válida");
 
         }
     }
