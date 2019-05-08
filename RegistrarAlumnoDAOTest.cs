@@ -99,18 +99,17 @@ namespace UnitTest
             DirectorDAO metodo = new DirectorDAO();
             bool resultadoEsperado = true;
             bool resultadoObtenido = false;
-
-            alumno.Matricula = "";
-            alumno.Nombre = "Ana";
-            alumno.Apellido = "Hernandez";
-            alumno.CorreoElectronico = "zs17012930@estudiantes.uv.mx";
-            alumno.CarreraAlumno = 0;
-            alumno.ContraseñaAlumno = "ana123";
-            alumno.FechaNacimiento = "1998-09-09";
+            
+            coordinador.Nombre = "Ángel Juán";
+            coordinador.Apellido = "Sánchez García";
+            coordinador.CorreoElectronico = "angel@gmail.com";
+            coordinador.ContraseñaCoordinador = "angel123";
+            coordinador.FechaNacimiento = "1989-07-18";
+            coordinador.Carrera = 0;
         
-            resultadoObtenido=metodo.registrarAlumno(alumno);
+            resultadoObtenido=metodo.registrarCoordinador(coordinador);
 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria vacía");
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar coordinador válido");
 
         }
     }
