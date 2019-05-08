@@ -307,5 +307,65 @@ namespace UnitTest
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar técnico con campos vacíos");
 
         }
+        
+        [TestMethod]
+        public void PruebaRegistrarProyecto()
+        {
+           Proyecto proyecto = new Proyecto(); 
+            ProyectoDAO metodo = new ProyectoDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+            proyecto.IdProyecto = "P021";
+            proyecto.MaxAlumno = 32;
+            proyecto.Horario = "9:00 AM - 14:00 PM";
+            proyecto.NombreProyecto = "Mantenimiento de servidor de la FEI";
+            tecnico.EstadoP = 1;
+            tecnico.Pertenecea = "Javier Limon";
+            resultadoObtenido=metodo.registrarProyecto(proyecto);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba registrar un proyecto valido");
+
+        }
+        
+        
+        [TestMethod]
+        public void PruebaRegistrarProyecto()
+        {
+           Proyecto proyecto = new Proyecto(); 
+            ProyectoDAO metodo = new ProyectoDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+            proyecto.IdProyecto = null;
+            proyecto.MaxAlumno = null;
+            proyecto.Horario = null;
+            proyecto.NombreProyecto = null;
+            tecnico.Pertenecea = null;
+            resultadoObtenido=metodo.registrarProyecto(proyecto);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba registrar un proyecto con campos vacios";
+
+        }
+                            
+        public void PruebaRegistrarEncargado()
+        {
+           Encargado encargado = new Encargado(); 
+            Coordinador metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;     
+  
+            encargado.Nombre = null;
+            encargado.Apellido = null;
+            encargado.CorreoElectronico = null;
+            encargado.FechaNacimiento = null;
+            encargado.Dirigea = null;
+            encargado.Pertenecea = null;   
+            
+            resultadoObtenido=metodo.registrarEncargado(encargado);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar encargado campos vacíos");
+
+        }         
     }
 }
