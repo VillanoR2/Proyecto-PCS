@@ -93,6 +93,27 @@ namespace UnitTest
 
         }
         
+                [TestMethod]
+        public void PruebaRegistrarAlumnoCamposVacios()
+        {
+            Alumno alumno = new Alumno();
+            AlumnoDAO metodo = new AlumnoDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+
+            alumno.Matricula = null;
+            alumno.Nombre = null;
+            alumno.Apellido = null;
+            alumno.CorreoElectronico = null;
+            alumno.ContraseñaAlumno = null;
+            alumno.FechaNacimiento = null;
+
+            resultadoObtenido = metodo.registrarAlumno(alumno);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar estudiante con campos vacios");
+
+        }
+        
         public void PruebaRegistrarCoordinador()
         {
            Coordinador coordinador = new Coordinador(); 
