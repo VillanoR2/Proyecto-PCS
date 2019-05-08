@@ -167,11 +167,49 @@ namespace UnitTest
            institucion.NombreInstitucion = "FEI";
            institucion.Direccion = "avenida Xalapa esq. Avila camacho";
            institucion.TelefonoInstitucion = "2288900000";
-           institucion.TipoInstitucion = "Universidad;
+           institucion.TipoInstitucion = "Universidad";
         
             resultadoObtenido=metodo.registrarInstitución(institución);
 
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar institución válida");
+
+        }
+        
+        public void PruebaRegistrarInstitución()
+        {
+            Institución institución = new Institución(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+           institucion.IdInstitucion = "001";
+           institucion.NombreInstitucion = "CFE";
+           institucion.Direccion = "Allende col. Centro";
+           institucion.TelefonoInstitucion = "2288911180";
+           institucion.TipoInstitucion = "Oficina de servicios";
+        
+            resultadoObtenido=metodo.registrarInstitución(institución);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria repetida");
+
+        }
+        
+        public void PruebaRegistrarInstitución()
+        {
+            Institución institución = new Institución(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+           institucion.IdInstitucion = "";
+           institucion.NombreInstitucion = "Gobierno Municipal";
+           institucion.Direccion = "Enriquez col. Centro";
+           institucion.TelefonoInstitucion = "2288922180";
+           institucion.TipoInstitucion = "Oficina de gobierno";
+        
+            resultadoObtenido=metodo.registrarInstitución(institución);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria vacía");
 
         }
     }
