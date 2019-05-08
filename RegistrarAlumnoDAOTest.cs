@@ -30,6 +30,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
         public void PruebaRegistrarAlumnoNoValido()
         {
            Alumno alumno = new Alumno(); 
@@ -51,6 +52,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
         public void PruebaRegistrarAlumnoLlavePrimaria()
         {
            Alumno alumno = new Alumno(); 
@@ -72,6 +74,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
           public void PruebaRegistrarAlumnoLlavePrimaria()
         {
            Alumno alumno = new Alumno(); 
@@ -114,6 +117,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
         public void PruebaRegistrarCoordinador()
         {
            Coordinador coordinador = new Coordinador(); 
@@ -135,6 +139,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
         public void PruebaRegistrarCoordinador()
         {
            Coordinador coordinador = new Coordinador(); 
@@ -156,6 +161,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
          public void PruebaRegistrarCoordinador()
         {
            Coordinador coordinador = new Coordinador(); 
@@ -169,7 +175,7 @@ namespace UnitTest
             coordinador.ContraseñaCoordinador = "angel123";
             coordinador.FechaNacimiento = "1989-07-18";
             coordinador.Carrera = 1;
-            coordinador.NumPersonal = null;
+            coordinador.NumPersonal = " ";
         
             resultadoObtenido=metodo.registrarCoordinador(coordinador);
 
@@ -177,6 +183,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
         public void PruebaRegistrarInstitución()
         {
             Institución institución = new Institución(); 
@@ -196,6 +203,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
         public void PruebaRegistrarInstitución()
         {
             Institución institución = new Institución(); 
@@ -215,6 +223,7 @@ namespace UnitTest
 
         }
         
+        [TestMethod]
         public void PruebaRegistrarInstitución()
         {
             Institución institución = new Institución(); 
@@ -222,7 +231,7 @@ namespace UnitTest
             bool resultadoEsperado = true;
             bool resultadoObtenido = false;
             
-           institucion.IdInstitucion = null;
+           institucion.IdInstitucion = "";
            institucion.NombreInstitucion = "Gobierno Municipal";
            institucion.Direccion = "Enriquez col. Centro";
            institucion.TelefonoInstitucion = "2288922180";
@@ -231,6 +240,49 @@ namespace UnitTest
             resultadoObtenido=metodo.registrarInstitución(institución);
 
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Llave primaria vacía");
+
+        }
+        
+        [TestMethod]
+        public void PruebaRegistrarTécnico()
+        {
+           Técnico tecnico = new Tecnico(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+            tecnico.Nombre = "Martha ";
+            tecnico.Apellido = "Cuevas";
+            tecnico.CorreoElectronico = "martha@gmail.com";
+            tecnico.Contraseña = "martha123";
+            tecnico.FechaNacimiento = "1985-07-16";
+            tecnico.Carrera = 0;
+            tecnico.NumPersonal_Tecnico = "01";
+           tecnico.Auxiliaa = "01"
+            resultadoObtenido=metodo.registrarTecnico(tecnico);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar técnico válido");
+
+        }
+        
+        [TestMethod]
+        public void PruebaRegistrarTécnico()
+        {
+           Técnico tecnico = new Tecnico(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            tecnico.Nombre = "Mariana";
+            tecnico.Apellido = "Gomez";
+            tecnico.CorreoElectronico = "mariana@gmail.com";
+            tecnico.Contraseña = "mariana123";
+            tecnico.FechaNacimiento = "1987-04-26";
+            tecnico.Carrera = 0;
+            tecnico.NumPersonal_Tecnico = 01;
+           tecnico.Auxiliaa = "01"
+            resultadoObtenido=metodo.registrarTecnico(tecnico);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar técnico con llave primaria repetida");
 
         }
     }
