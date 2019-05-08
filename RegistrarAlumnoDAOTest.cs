@@ -285,5 +285,27 @@ namespace UnitTest
             Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar técnico con llave primaria repetida");
 
         }
+        
+        [TestMethod]
+        public void PruebaRegistrarTécnico()
+        {
+           Técnico tecnico = new Tecnico(); 
+            CoordinadorDAO metodo = new CoordinadorDAO();
+            bool resultadoEsperado = true;
+            bool resultadoObtenido = false;
+            
+            tecnico.Nombre = null;
+            tecnico.Apellido = null;
+            tecnico.CorreoElectronico = null;
+            tecnico.Contraseña = null;
+            tecnico.FechaNacimiento = null;
+            tecnico.Carrera = null;
+            tecnico.NumPersonal_Tecnico = null;
+           tecnico.Auxiliaa = null;
+            resultadoObtenido=metodo.registrarTecnico(tecnico);
+
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido, "Prueba agregar técnico con campos vacíos");
+
+        }
     }
 }
