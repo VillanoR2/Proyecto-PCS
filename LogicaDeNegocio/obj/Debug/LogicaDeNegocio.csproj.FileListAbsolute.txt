@@ -1,0 +1,9 @@
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\bin\Debug\LogicaDeNegocio.dll
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\bin\Debug\LogicaDeNegocio.pdb
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\bin\Debug\ClassLibrary1.dll
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\bin\Debug\ClassLibrary1.pdb
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.csprojAssemblyReference.cache
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.csproj.CopyComplete
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.dll
+C:\Users\arturovilla\source\repos\ServicioSocialApp\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.pdb
